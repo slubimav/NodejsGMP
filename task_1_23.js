@@ -5,7 +5,7 @@ const readStream = fs.createReadStream('./csv/data.csv', {
     highWaterMark: 2
 })
  
-const writeStream =  fs.createWriteStream('./csv/data.txt')
+const writeStream =  fs.createWriteStream('./csv/task_1_23.txt')
  
 readStream
     .on('error', function(e){ console.log('Error during file reading: ', e)})

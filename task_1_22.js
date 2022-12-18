@@ -5,7 +5,7 @@ const readStream = fs.createReadStream('./csv/data.csv', {
     highWaterMark: 10  // Determines how many bytes we will receive at a time.
 })
 
-const writeStream =  fs.createWriteStream('./csv/data2.txt')
+const writeStream =  fs.createWriteStream('./csv/task_1_22.txt')
 let readNumber = 1
 
 readStream.on('readable', () =>{

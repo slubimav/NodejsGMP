@@ -50,7 +50,7 @@ Output file: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.txt
 
 ```
 
-npm run task2
+npm run task21
 
 ```
 

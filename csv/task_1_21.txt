@@ -1,0 +1,4 @@
+{"{\"Book\":\"The Compound Effect\"":"{\"Book\":\"The 7 Habits of Highly Effective People\"","Author\":\"Darren Hardy":"Author\":\"Stephen R. Covey","Amount\":\"5":"Amount\":\"4","\"Price\":\"9":{"48\"}":"\"Price\":\"23.48\"}"}}
+{"{\"Book\":\"The Compound Effect\"":"{\"Book\":\"The Miracle Morning\"","Author\":\"Darren Hardy":"Author\":\"Hal Elrod","Amount\":\"5":"Amount\":\"10","\"Price\":\"9":{"48\"}":"\"Price\":\"21.34\"}"}}
+{"{\"Book\":\"The Compound Effect\"":"{\"Book\":\"Influence: The Psychology of Persuasion\"","Author\":\"Darren Hardy":"Author\":\"Robert B. Cialdini","Amount\":\"5":"Amount\":\"4","\"Price\":\"9":{"48\"}":"\"Price\":\"12.99\"}"}}
+{"{\"Book\":\"The Compound Effect\"":"{\"Book\":\"The ONE Thing\"","Author\":\"Darren Hardy":"Author\":\"Gary Keller","Amount\":\"5":"Amount\":\"1","\"Price\":\"9":{"48\"}":"\"Price\":\"11.18\"}"}}
