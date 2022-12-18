@@ -84,7 +84,7 @@ npm run task23
 
 We use ES modules. In package.json there is "type" key with "module" value.
 In order get code compartible to ES2015 we use babel.
-Next commant generates file __task_1_22_b.js__
+Command __npm run build2__ generate file __task_1_22_b.js__
 
 ```
 git checkout task-1.3
