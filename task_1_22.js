@@ -1,11 +1,11 @@
-const fs = require('fs')
-const csv = require('csvtojson')
+import fs from 'fs'
+import csv from 'csvtojson'
 
 const readStream = fs.createReadStream('./csv/data.csv', { 
     highWaterMark: 10  // Determines how many bytes we will receive at a time.
 })
 
-const writeStream =  require('fs').createWriteStream('./csv/data2.txt')
+const writeStream =  fs.createWriteStream('./csv/data2.txt')
 let readNumber = 1
 
 readStream.on('readable', () =>{
