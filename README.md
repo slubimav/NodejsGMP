@@ -27,8 +27,7 @@ EVALUATION CRITERIA
 Status | Task | Url
 -----|-----|--------
 Done | Task 1.1 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_1.js
-Done | Task 1.2 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_2.js
-Done | Task 1.22 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
+Done | Task 1.2 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_21.js
 Done | Task 1.3 | https://github.com/slubimav/NodejsGMP/tree/task-1.3
 
 # How to check
@@ -36,46 +35,60 @@ Done | Task 1.3 | https://github.com/slubimav/NodejsGMP/tree/task-1.3
 ## Task 1.1
 
 ```
-
+git checkout task-1
+npm install
 npm run task1
 
 ```
 
 ## Task 1.2
 
-Code: https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_2.js
-CSV: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.csv
-Output file: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.txt
+Code: https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_21.js
+Output file: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/task_1_21.txt
 
 
 ```
-
-npm run task2
+git checkout task-1
+npm install
+npm run task21
 
 ```
 
-Code: https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
-CSV: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.csv
-Output file: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.txt
+Here some more exemple with the same functionality:
 
 In this exemple we are going to read data by 10 bytes, print them, and process in CSV()
 After CSV() will have ready JSON object it will write to file.
 
 
+Code: https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
+
+
 ```
 
-npm run task2
+npm run task22
 
 ```
 
-## Task 1.1
+
+Code: https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_23.js
+
+
+```
+
+npm run task23
+
+```
+
+
+## Task 1.3
 
 We use ES modules. In package.json there is "type" key with "module" value.
 In order get code compartible to ES2015 we use babel.
-Next commant generates file task_1_22_b.js
+Next commant generates file __task_1_22_b.js__
 
 ```
-
+git checkout task-1.3
+npm install
 npm run build2
 
 ```
