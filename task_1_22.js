@@ -1,5 +1,5 @@
-import fs from 'node:fs'
-import csv from 'csvtojson'
+const fs = require('fs')
+const csv = require('csvtojson')
 
 const readStream = fs.createReadStream('./csv/data.csv', { 
     highWaterMark: 10  // Determines how many bytes we will receive at a time.
