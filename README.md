@@ -27,8 +27,7 @@ EVALUATION CRITERIA
 Status | Task | Url
 -----|-----|--------
 Done | Task 1.1 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_1.js
-Done | Task 1.2 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_2.js
-Done | Task 1.22 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
+Done | Task 1.2 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_21.js
 Done | Task 1.3 | https://github.com/slubimav/NodejsGMP/tree/task-1.3
 
 # How to check
@@ -36,7 +35,8 @@ Done | Task 1.3 | https://github.com/slubimav/NodejsGMP/tree/task-1.3
 ## Task 1.1
 
 ```
-
+git checkout task-1
+npm install
 npm run task1
 
 ```
@@ -48,7 +48,8 @@ Output file: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/task_1_21.txt
 
 
 ```
-
+git checkout task-1
+npm install
 npm run task21
 
 ```
@@ -86,7 +87,8 @@ In order get code compartible to ES2015 we use babel.
 Next commant generates file __task_1_22_b.js__
 
 ```
-
+git checkout task-1.3
+npm install
 npm run build2
 
 ```
