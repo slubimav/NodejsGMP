@@ -8,7 +8,6 @@ const readStream = require('fs').createReadStream('./csv/data.csv', {
 const writeStream =  require('fs').createWriteStream('./csv/data.txt')
  
 readStream
-    .on('data', () => { console.log(readStream.read())})
     .on('error', function(e){ console.log('Error during file reading: ', e)})
     .pipe(csv())
     .on('error', function(e){ console.log('Error during CSV parsing: ', e)})
