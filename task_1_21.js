@@ -12,7 +12,7 @@ const { promisify } = require('util');
 const pipelineAsync = promisify(pipeline);
   
 // Constructing readable stream
-const readable = fs.createReadStream('./csv/data.txt');
+const readable = fs.createReadStream('./csv/data.csv');
   
 // Constructing writable stream
 var writable = fs.createWriteStream("./csv/task_1_21.txt");
