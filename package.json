@@ -4,7 +4,8 @@
   "description": "NodeJS Global Mentoring Program [2022Q4 BY+GUKA]",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1": "nodemon task_1_1"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/slubimav/NodejsGMP/issues"
   },
-  "homepage": "https://github.com/slubimav/NodejsGMP#readme"
+  "homepage": "https://github.com/slubimav/NodejsGMP#readme",
+  "devDependencies": {
+    "nodemon": "2.0.20"
+  }
 }
