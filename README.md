@@ -35,11 +35,11 @@ Done | Task 1.3 | https://github.com/SeLub/NodeJS-RSS/tree/task-2
 
 ## Task 1.1
 
-'''
+```
 
 npm run task1
 
-'''
+```
 
 ## Task 1.2
 
@@ -48,11 +48,11 @@ CSV: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.csv
 Output file: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.txt
 
 
-'''
+```
 
 npm run task2
 
-'''
+```
 
 Code: https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
 CSV: https://github.com/slubimav/NodejsGMP/blob/task-1/csv/data.csv
@@ -62,11 +62,11 @@ In this exemple we are going to read data by 10 bytes, print them, and process i
 After CSV() will have ready JSON object it will write to file.
 
 
-'''
+```
 
 npm run task2
 
-'''
+```
 
 ## Task 1.1
 
@@ -74,8 +74,8 @@ We use ES modules. In package.json there is "type" key with "module" value.
 In order get code compartible to ES2015 we use babel.
 Next commant generates file task_1_22_b.js
 
-'''
+```
 
 npm run build2
 
-'''
+```
