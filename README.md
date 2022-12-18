@@ -72,7 +72,7 @@ npm run task2
 
 We use ES modules. In package.json there is "type" key with "module" value.
 In order get code compartible to ES2015 we use babel.
-Next commant generates file 
+Next commant generates file task_1_22_b.js
 
 '''
 
