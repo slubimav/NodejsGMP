@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "NodeJS Global Mentoring Program [2022Q4 BY+GUKA]",
   "main": "index.js",
-  "type": "module",  "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "task1": "nodemon task_1_1",
     "task2": "nodemon task_1_2",
-    "task22": "nodemon task_1_22"
+    "task22": "nodemon task_1_22",
+    "build2": "babel task_1_22.js -o task_1_22_b.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/slubimav/NodejsGMP#readme",
   "devDependencies": {
+    "@babel/cli": "7.19.3",
+    "@babel/core": "7.20.5",
+    "@babel/preset-env": "7.20.2",
     "nodemon": "2.0.20"
   },
   "dependencies": {
