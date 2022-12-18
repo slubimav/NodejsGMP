@@ -28,5 +28,5 @@ Status | Task | Url
 -----|-----|--------
 Done | Task 1.1 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_1.js
 Done | Task 1.2 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_2.js
-Done | Task 1.22 | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
+Done | Task 1.22 (variant 2) | https://github.com/slubimav/NodejsGMP/blob/task-1/task_1_22.js
 Done | Task 1.3 | https://github.com/slubimav/NodejsGMP/tree/task-1.3
