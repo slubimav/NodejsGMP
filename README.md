@@ -6,10 +6,10 @@
 - To create REST service,use ExpressJS (https://expressjs.com/). The User should have the following properties(you can use UUIDas a user identifier (id)):
 
 2) Service should have the following CRUD operations for User:
-−get user by id;
-−create and update user;
-−get auto-suggest list from _limit_ users, sorted by login property and filtered by _loginSubstringin_ the login property: _getAutoSuggestUsers(loginSubstring, limit)_
-−remove user (soft delete–user gets marked with _isDeleted_ flag, but not removed from the collection).
+- get user by id;
+- create and update user;
+- get auto-suggest list from _limit_ users, sorted by login property and filtered by _loginSubstringin_ the login property: _getAutoSuggestUsers(loginSubstring, limit)_
+- remove user (soft delete–user gets marked with _isDeleted_ flag, but not removed from the collection).
 
 3) Store user’scollection in the service memory (while the service is running).
 
