@@ -8,6 +8,13 @@ const userDatabaseMethods = require('../../../repository')
             response.send(userDatabaseMethods.getAllUsers())
       })
 
+      userRouter.get('/suggest-users', (request, response) => {
+            const { login_substring = 'est', limit = '10' } = request.query
+            const users = userDatabaseMethods.getAutoSuggestUsers(login_substring, limit)
+            response.send(users)
+
+      })
+
       userRouter.get('/:id', (request, response) => {
             const id = request.params.id
             const isUserFound = userDatabaseMethods.getUserById(id)
@@ -57,5 +64,7 @@ const userDatabaseMethods = require('../../../repository')
                   : response.status(204).send(`User id = ${id} deleted.`)
               }
       })
+
+
 
 module.exports = userRouter

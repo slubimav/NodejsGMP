@@ -31,8 +31,16 @@ const removeUser = (userId) => {
   return true
 }
 
+const getAutoSuggestUsers = (login_substring, limit) => {
+  const loginLikeUsers = userDatabase.filter(user => user.login.includes(login_substring))
+  console.log(loginLikeUsers)
+  const suggestedUsers = loginLikeUsers.sort().slice(0, limit)
+  console.log(suggestedUsers)
+return suggestedUsers
+}
+
 const userDatabaseMethods = {
-      getAllUsers, getUserById, createUser, updateUser, removeUser
+      getAllUsers, getUserById, createUser, updateUser, removeUser, getAutoSuggestUsers
 }
 
 module.exports = userDatabaseMethods
