@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express()
+const userRouter = require('./domen/users/user.router')
 
-      router.get('/', (request, response) =>{
-            response.send('Hello world!')
-      })
+      router.use('/user', userRouter)
 
 module.exports = router
