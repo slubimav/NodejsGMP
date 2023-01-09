@@ -1,4 +1,4 @@
-const userDatabase = require ('./src/domen/users/user.database')
+let userDatabase = require ('./src/domen/users/user.database')
 const User = require('./src/domen/users/users.model')
 
 /* ------------------ Users -----------------------------------*/
@@ -7,7 +7,7 @@ const getAllUsers = () => userDatabase
 
 const getUserById = (userId) => {
     const user = userDatabase.find(user => user.id === userId)
-    return user
+    return user !== undefined ? user : false
   }
 
 const createUser = (user) => {
@@ -16,10 +16,13 @@ const createUser = (user) => {
     return newUser
 }
 
-const updateUser = (updatedUser) => {
-  userDatabase = userDatabase.forEach(user => user.id === updateUser.id ? { ...user,...updateUser } : user)
-  const fullUpdatedUser = userDatabase.find(user => user.id === updateUser.id)
-  return fullUpdatedUser
+const updateUser = (userId, updateData) => {
+  if (!userDatabase.some((user) => user.id === userId)) { return false } 
+    userDatabase.forEach((user, index) => user.id === userId 
+      ? userDatabase[index] = {...user, ...updateData} 
+      : user
+      )
+    return userDatabase.find(user => user.id === userId)
 }
 
 const removeUser = (userId) => {
