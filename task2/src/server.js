@@ -1,11 +1,10 @@
 const express = require('express')
+
+const router = require('./router')
 const server = express()
+server.use('/', router)
 
 const SERVER_PORT = process.env.PORT || 3000
-
-server.get('/', (request, response) =>{
-      response.send('Hello world!')
-})
 
 const startServer = async () => {
       try{
@@ -18,3 +17,5 @@ const startServer = async () => {
     }
     
 startServer()
+
+module.exports = server
