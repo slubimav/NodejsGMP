@@ -2,8 +2,8 @@
 
 ## TASK 2.1
 
-1) Write a simple REST service withCRUD operations for User entity.
-- To create REST service,use ExpressJS (https://expressjs.com/). The User should have the following properties(you can use UUIDas a user identifier (id)):
+1) Write a simple REST service with CRUD operations for User entity.
+- To create REST service,use ExpressJS (https://expressjs.com/). The User should have the following properties (you can use UUIDas a user identifier (id)):
 
 2) Service should have the following CRUD operations for User:
 - get user by id;
@@ -11,7 +11,7 @@
 - get auto-suggest list from _limit_ users, sorted by login property and filtered by _loginSubstringin_ the login property: _getAutoSuggestUsers(loginSubstring, limit)_
 - remove user (soft delete–user gets marked with _isDeleted_ flag, but not removed from the collection).
 
-3) Store user’scollection in the service memory (while the service is running).
+3) Store user’s collection in the service memory (while the service is running).
 
 ## Task 2.2
 
@@ -28,6 +28,6 @@ For requests validation use special packages like joi (https://github.com/hapijs
 ## EVALUATION CRITERIA2.
 2. Task 2.1 is partially implemented (w/o getAutoSuggestUsers or other methods).
 3. Task 2.1 is fulfilled to the full extent.
-4. Task 2.1eslint rules are applied.
-5. Task 2.2is fulfilled to the full extent; validation package is used.
+4. Task 2.1 eslint rules are applied.
+5. Task 2.2 is fulfilled to the full extent; validation package is used.
 5*. Consider to use Typescript.
