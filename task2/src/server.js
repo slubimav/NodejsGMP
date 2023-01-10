@@ -1,18 +1,21 @@
 import express from 'express'
 import router from './router.js'
 
-const server = express()
-server.use('/', router)
+const startServer = () => {
+      const server = express()
+      server.use('/', router)
+      server.listen(3000, () => { 
+            console.log(`🚀  Express server running on PORT:3000\nOpen http://localhost:3000`)})
 
-const SERVER_PORT = 3000
-
-const startServer = async () => {
-      try{
-            await server.listen(SERVER_PORT, () => { 
-            console.log(`🚀  Express server running on PORT:${SERVER_PORT}\nOpen http://localhost:3000`)})
-      } catch(error){
-            console.log(`❌  Express server are failed to start!\nError: ${error}`)
+      process.on('uncaughtException', err => {
+            console.error(`❌ UncaughtException error: '${err.message}'. ${err.stack}`);
+            process.exit();
+            });
+              
+      process.on('unhandledRejection', err => {
+            console.error(`❌ UnhandledRejection error: '${err.message}'. ${err.stack}`);
+            process.exit();
+            });
       }
-    }
     
 startServer()
