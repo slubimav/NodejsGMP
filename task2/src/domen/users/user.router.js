@@ -55,7 +55,6 @@ import userDatabaseMethods from '../../../repository.js'
 
       userRouter.delete('/:id', (request, response) => {
             const id = request.params.id
-            console.log(id)
             if(!id) {
                   response.status(400).send(`User id is not defined.`)
               } else {

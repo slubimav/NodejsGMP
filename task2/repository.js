@@ -29,7 +29,7 @@ const updateUser = (userId, updateData) => {
 
 const removeUser = (userId) => {
   if (!userDatabase.some((user) => user.id === userId)) { return false } 
-  userDatabase = userDatabase.filter(user => user.id !== userId)
+  updateUser(userId,{ isDeleted: "true"} )
   return true
 }
 
