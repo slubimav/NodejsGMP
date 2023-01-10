@@ -1,8 +1,8 @@
-const express = require('express')
+import express from 'express'
 const userRouter = express()
 userRouter.use(express.json())  
 
-const userDatabaseMethods = require('../../../repository')
+import userDatabaseMethods from '../../../repository.js'
 
       userRouter.get('/', (request, response) => {
             response.send(userDatabaseMethods.getAllUsers())
@@ -67,4 +67,4 @@ const userDatabaseMethods = require('../../../repository')
 
 
 
-module.exports = userRouter
+export default userRouter

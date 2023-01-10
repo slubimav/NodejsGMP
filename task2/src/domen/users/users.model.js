@@ -1,7 +1,8 @@
-const { v4: uuid } = require('uuid');
+import pkg from 'uuid'
+const { v4: uuid } = pkg
 
 class User {
-      constructor({id, login, password, age, isDeleted}){
+      constructor({login, password, age, isDeleted}){
             this.id = uuid()
             this.login = login
             this.password = password
@@ -10,4 +11,4 @@ class User {
       }
 }
 
-module.exports = User
+export default User

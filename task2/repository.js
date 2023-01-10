@@ -1,5 +1,7 @@
-let userDatabase = require ('./src/domen/users/user.database')
-const User = require('./src/domen/users/users.model')
+import * as userDB from './src/domen/users/user.database.js'
+import User from './src/domen/users/users.model.js'
+
+let userDatabase = userDB.default.userDatabase
 
 /* ------------------ Users -----------------------------------*/
 
@@ -43,4 +45,4 @@ const userDatabaseMethods = {
       getAllUsers, getUserById, createUser, updateUser, removeUser, getAutoSuggestUsers
 }
 
-module.exports = userDatabaseMethods
+export default userDatabaseMethods
