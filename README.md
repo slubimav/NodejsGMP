@@ -13,8 +13,9 @@ Just copy and past in terminal:
 
 ```
 git clone https://github.com/slubimav/NodejsGMP.git
-cd NodejsGMP/task2
+cd NodejsGMP
 git checkout task-2.2
+cd task2
 npm install
 npm run lint
 npm run start
