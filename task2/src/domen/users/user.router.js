@@ -1,4 +1,5 @@
 import express from 'express'
+import { validator } from './user.validator.js'
 const userRouter = express()
 userRouter.use(express.json())  
 
@@ -25,7 +26,7 @@ import userDatabaseMethods from '../../../repository.js'
 
       })
 
-      userRouter.post('/', (request, response) => {
+      userRouter.post('/', validator, (request, response) => {
             const body = request.body
 
             if(!Object.keys(request.body).length) {
@@ -39,7 +40,7 @@ import userDatabaseMethods from '../../../repository.js'
 
       })
 
-      userRouter.put('/:id', (request, response) => {
+      userRouter.put('/:id', validator, (request, response) => {
             const id = request.params.id
             const body = request.body
             if(!id || !Object.keys(request.body).length) {
