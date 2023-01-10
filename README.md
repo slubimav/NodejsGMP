@@ -1,4 +1,39 @@
-Self check:
+## Summary Report
+
+Server: Express
+Validator: Joi
+Code Check: ESLint
+Database: In mamory database (Javascript array)
+
+---
+
+### How to check
+
+Just copy and past in terminal:
+
+```
+git clone https://github.com/slubimav/NodejsGMP.git
+cd NodejsGMP/task2
+git checkout task-2.2
+npm install
+npm run lint
+npm run start
+
+```
+
+Then use POSTMAN
+
+```
+{
+    "login": "nome2sergey",
+    "password": "NewOne1",
+    "age": "130",
+    "isDeleted": "false"
+}
+
+```
+
+## Self check:
 
 TOTAL POINTS - **5**
 
