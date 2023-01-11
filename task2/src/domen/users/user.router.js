@@ -27,16 +27,14 @@ import userDatabaseMethods from '../../../repository.js'
       })
 
       userRouter.post('/', validator, (request, response) => {
-            const body = request.body
+                  const body = request.body
 
-            if(!Object.keys(request.body).length) {
-
-                  response.status(400).send('Bad request. Body is empty.')
-
-              } else {
-                  const createdUser = userDatabaseMethods.createUser(body)
-                  response.status(201).send(`User created:\n ${JSON.stringify(createdUser)}`)
-              }
+                  if(!Object.keys(request.body).length) {
+                        response.status(400).send('Bad request. Body is empty.')
+                  } else {
+                        const createdUser = userDatabaseMethods.createUser(body)
+                        response.status(201).send(`User created:\n ${JSON.stringify(createdUser)}`)
+                  }
 
       })
 
@@ -65,6 +63,13 @@ import userDatabaseMethods from '../../../repository.js'
               }
       })
 
-
+      userRouter.use(function (error, req, response, next){
+            if (error.type === 'entity.parse.failed') {
+                  response.status(400).send('Not valid body in request.')
+            } else {
+                  response.status(400).send(`Error in request:\n${error}`)
+            }
+            next()
+      })
 
 export default userRouter
