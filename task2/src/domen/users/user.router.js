@@ -63,13 +63,4 @@ import userDatabaseMethods from '../../../repository.js'
               }
       })
 
-      userRouter.use(function (error, req, response, next){
-            if (error.type === 'entity.parse.failed') {
-                  response.status(400).send('Not valid body in request.')
-            } else {
-                  response.status(400).send(`Error in request:\n${error}`)
-            }
-            next()
-      })
-
 export default userRouter
