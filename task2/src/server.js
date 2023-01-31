@@ -1,5 +1,8 @@
 import express from 'express'
 import router from './router.js'
+import * as dotenv from 'dotenv'
+dotenv.config()
+const PORT = process.env.PORT || 3000
 
 const startServer = () => {
       const server = express()
@@ -12,8 +15,8 @@ const startServer = () => {
             }
             next()
       })
-      server.listen(3000, () => { 
-            console.log(`🚀  Express server running on PORT:3000\nOpen http://localhost:3000`)})
+      server.listen(PORT, () => { 
+            console.log(`🚀  Express server running on PORT:${PORT}\nOpen http://localhost:${PORT}`)})
 
       process.on('uncaughtException', err => {
             console.error(`❌ UncaughtException error: '${err.message}'. ${err.stack}`);
