@@ -42,17 +42,17 @@ const getAutoSuggestUsers = (login_substring, limit) => {
 return suggestedUsers
 }
 
-const validatePassword = (userId, login, password) => {
+const validateLoginAndPassword = (userId, login, password) => {
   const user = userDatabase.find(user => user.id === userId)
   const encryptedPssword = (password) => {
         return crypto.pbkdf2Sync(password, 'salt', 1000, 64, `sha512`).toString(`hex`) }
 
-  const result = encryptedPssword(password) === user.password ? true : false
+  const result = ((encryptedPssword(password) === user.password) && (login === user.login)) ? true : false
   return result
 }
 
 const userDatabaseMethods = {
-      getAllUsers, getUserById, createUser, updateUser, removeUser, getAutoSuggestUsers, validatePassword
+      getAllUsers, getUserById, createUser, updateUser, removeUser, getAutoSuggestUsers, validateLoginAndPassword
 }
 
 export default userDatabaseMethods

@@ -38,8 +38,8 @@ import userDatabaseMethods from '../../../repository.js'
                   if(!Object.keys(request.body).length) {
                         response.status(400).send('Bad request. Body is empty.')
                   } else {
-                        const isPasswordValid = userDatabaseMethods.validatePassword(userId, login, password)
-                        isPasswordValid ? response.status(200).send(`User valid`) : response.status(200).send(`User NOT valid`)
+                        const isPasswordValid = userDatabaseMethods.validateLoginAndPassword(userId, login, password)
+                        isPasswordValid ? response.status(204).send() : response.status(403).send(`User NOT valid`)
                   }
 
             }
