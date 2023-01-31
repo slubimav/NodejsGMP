@@ -1,6 +1,6 @@
 {
     "env": {
-        "browser": true,
+        "node": true,
         "commonjs": false,
         "es2021": true
     },
@@ -10,7 +10,9 @@
     ],
     "overrides": [
     ],
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
+        "requireConfigFile": false,
         "ecmaVersion": "latest",
         "sourceType": "module"
     },

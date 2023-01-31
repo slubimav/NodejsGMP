@@ -1,5 +1,6 @@
 import * as userDB from './src/domen/users/user.database.js'
 import User from './src/domen/users/users.model.js'
+import crypto from 'crypto'
 
 let userDatabase = userDB.default.userDatabase
 
@@ -29,7 +30,7 @@ const updateUser = (userId, updateData) => {
 
 const removeUser = (userId) => {
   if (!userDatabase.some((user) => user.id === userId)) { return false } 
-  userDatabase = userDatabase.filter(user => user.id !== userId)
+  updateUser(userId,{ isDeleted: true} )
   return true
 }
 
@@ -41,8 +42,17 @@ const getAutoSuggestUsers = (login_substring, limit) => {
 return suggestedUsers
 }
 
+const validateLoginAndPassword = (userId, login, password) => {
+  const user = userDatabase.find(user => user.id === userId)
+  const encryptedPssword = (password) => {
+        return crypto.pbkdf2Sync(password, 'salt', 1000, 64, `sha512`).toString(`hex`) }
+
+  const result = ((encryptedPssword(password) === user.password) && (login === user.login)) ? true : false
+  return result
+}
+
 const userDatabaseMethods = {
-      getAllUsers, getUserById, createUser, updateUser, removeUser, getAutoSuggestUsers
+      getAllUsers, getUserById, createUser, updateUser, removeUser, getAutoSuggestUsers, validateLoginAndPassword
 }
 
 export default userDatabaseMethods

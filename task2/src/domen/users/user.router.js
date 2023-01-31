@@ -1,4 +1,6 @@
 import express from 'express'
+
+import { validator } from './user.validator.js'
 const userRouter = express()
 userRouter.use(express.json())  
 
@@ -25,21 +27,39 @@ import userDatabaseMethods from '../../../repository.js'
 
       })
 
-      userRouter.post('/', (request, response) => {
-            const body = request.body
+      userRouter.get('/validate/:id', (request, response) => {
+            const userId = request.params.id
+            const { login, password } = request.body
 
-            if(!Object.keys(request.body).length) {
+            const isUserFound = userDatabaseMethods.getUserById(userId)
+            if (!isUserFound) {
+                  response.status(404).send(`User id = ${userId} not found in database`)
+            } else {
+                  if(!Object.keys(request.body).length) {
+                        response.status(400).send('Bad request. Body is empty.')
+                  } else {
+                        const isPasswordValid = userDatabaseMethods.validateLoginAndPassword(userId, login, password)
+                        isPasswordValid ? response.status(204).send() : response.status(403).send(`User NOT valid`)
+                  }
 
-                  response.status(400).send('Bad request. Body is empty.')
+            }
 
-              } else {
-                  const createdUser = userDatabaseMethods.createUser(body)
-                  response.status(201).send(`User created:\n ${JSON.stringify(createdUser)}`)
-              }
 
       })
 
-      userRouter.put('/:id', (request, response) => {
+      userRouter.post('/', validator, (request, response) => {
+                  const body = request.body
+
+                  if(!Object.keys(request.body).length) {
+                        response.status(400).send('Bad request. Body is empty.')
+                  } else {
+                        const createdUser = userDatabaseMethods.createUser(body)
+                        response.status(201).send(`User created:\n ${JSON.stringify(createdUser)}`)
+                  }
+
+      })
+
+      userRouter.put('/:id', validator, (request, response) => {
             const id = request.params.id
             const body = request.body
             if(!id || !Object.keys(request.body).length) {
@@ -54,7 +74,6 @@ import userDatabaseMethods from '../../../repository.js'
 
       userRouter.delete('/:id', (request, response) => {
             const id = request.params.id
-            console.log(id)
             if(!id) {
                   response.status(400).send(`User id is not defined.`)
               } else {
@@ -64,7 +83,5 @@ import userDatabaseMethods from '../../../repository.js'
                   : response.status(204).send(`User id = ${id} deleted.`)
               }
       })
-
-
 
 export default userRouter
