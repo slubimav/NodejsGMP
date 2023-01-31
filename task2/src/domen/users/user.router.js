@@ -1,4 +1,5 @@
 import express from 'express'
+
 import { validator } from './user.validator.js'
 const userRouter = express()
 userRouter.use(express.json())  
@@ -23,6 +24,26 @@ import userDatabaseMethods from '../../../repository.js'
             isUserFound
             ? response.send(isUserFound)
             : response.status(404).send(`User id = ${id} not found in database`)
+
+      })
+
+      userRouter.get('/validate/:id', (request, response) => {
+            const userId = request.params.id
+            const { login, password } = request.body
+
+            const isUserFound = userDatabaseMethods.getUserById(userId)
+            if (!isUserFound) {
+                  response.status(404).send(`User id = ${userId} not found in database`)
+            } else {
+                  if(!Object.keys(request.body).length) {
+                        response.status(400).send('Bad request. Body is empty.')
+                  } else {
+                        const isPasswordValid = userDatabaseMethods.validatePassword(userId, login, password)
+                        isPasswordValid ? response.status(200).send(`User valid`) : response.status(200).send(`User NOT valid`)
+                  }
+
+            }
+
 
       })
 
