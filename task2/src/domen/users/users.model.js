@@ -1,5 +1,4 @@
-import pkg from 'uuid'
-const { v4: uuid } = pkg
+import { v4 as uuid } from 'uuid'
 
 class User {
       constructor({login, password, age, isDeleted}){
