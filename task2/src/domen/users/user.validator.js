@@ -3,8 +3,7 @@ import Joi from 'joi';
 const schema = Joi.object().keys({
   login: Joi.string().alphanum().min(1).required(),
   password: Joi.string().required().pattern(new RegExp('[A-Za-z0-9]*([a-zA-Z]+[0-9]+|[0-9]+[a-zA-Z]+)')),
-  age: Joi.number().min(4).max(130).required(),
-  isDeleted: Joi.boolean().required()
+  age: Joi.number().min(4).max(130).required()
 });
 
 export const validator = (req, res, next) => {
