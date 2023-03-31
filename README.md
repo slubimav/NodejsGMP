@@ -3,9 +3,11 @@
 Server: Express
 Validator: Joi
 Code Check: ESLint
-Database: In mamory database (Javascript array)
+Database: PostgreSQL
 
 ---
+
+PostgreSQL and Server work in dedicated containers in Docker.
 
 ### How to check
 
@@ -14,11 +16,10 @@ Just copy and past in terminal:
 ```
 git clone https://github.com/slubimav/NodejsGMP.git
 cd NodejsGMP
-git checkout task-2.2
-cd task2
+git checkout task-3
 npm install
 npm run lint
-npm run start
+npm run dev
 
 ```
 

@@ -4,7 +4,7 @@ import { validator } from './user.validator.js'
 const userRouter = express()
 userRouter.use(express.json())  
 
-import userDatabaseMethods from '../../../repository.js'
+import userDatabaseMethods from '../../repository.js'
 
       userRouter.get('/', (request, response) => {
             response.send(userDatabaseMethods.getAllUsers())

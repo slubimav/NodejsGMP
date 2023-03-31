@@ -2,7 +2,7 @@ import express from 'express'
 import router from './router.js'
 import * as dotenv from 'dotenv'
 dotenv.config()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.SERVER_PORT || 3000
 
 const startServer = () => {
       const server = express()
