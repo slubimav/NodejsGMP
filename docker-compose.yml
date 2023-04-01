@@ -12,6 +12,11 @@ services:
     restart: unless-stopped
     environment:
       SERVER_PORT: ${SERVER_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_HOST: db
+      POSTGRES_DIALECT: ${POSTGRES_DIALECT}
     depends_on:
       - db
   db:
@@ -20,9 +25,11 @@ services:
       dockerfile: Dockerfile-database
     container_name: db
     environment:
+      POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_DIALECT: ${POSTGRES_DIALECT}
     restart: always
     volumes:
       - ./dbData:/var/lib/postgresql/data
