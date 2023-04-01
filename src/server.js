@@ -6,6 +6,7 @@ const PORT = process.env.SERVER_PORT || 3000
 
 const startServer = () => {
       const server = express()
+      server.use(express.json())
       server.use('/', router)
       server.use(function (error, req, response, next){
             if (error.type === 'entity.parse.failed') {

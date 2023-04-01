@@ -10,8 +10,6 @@ const config = {
       dialect : process.env.POSTGRES_DIALECT,
 }
 
-console.log('CONFIG :', config)
-
 export const sequelize = new Sequelize(
   config.database,
   config.user,
