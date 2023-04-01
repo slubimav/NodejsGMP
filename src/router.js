@@ -1,5 +1,5 @@
 import express from 'express'
-import userRouter from './domen/users/user.router.js'
+import userRouter from './routes/user.js'
 
 const router = express()
 router.use('/users', userRouter)
