@@ -16,7 +16,7 @@ The server is also running in dedicated container. docker compose is used to run
 Squilize is used to manage the database. The password hash is stored in the database instead of plain text.
 All CRUD operations are implemented.
 
-Database credentials & server PORT should be configured in .env as it is in https://github.com/slubimav/NodejsGMP/blob/task-3/.env.example. Note: We should never save creds in .env.example in Github, but for the Task I made an exception.
+Database credentials & server PORT should be configured in .env as it is in https://github.com/slubimav/NodejsGMP/blob/task-3/.env.example. Note: We should never save creds in .env.example in Github, but for the Task I made an exception for convinience of checking process.
 
 ### How to check
 
