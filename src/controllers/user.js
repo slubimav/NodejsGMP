@@ -4,7 +4,7 @@ const listAllUsers = (req, res) => {
     return User
       .findAll({
         order: [
-          ['createdAt', 'DESC'],
+          ['isDeleted', 'DESC'],
         ],
       })
       .then((Users) => res.status(200).send(Users))
@@ -53,6 +53,7 @@ const updateUser = (req, res) => {
             login: req.body.login || User.login,
             password: req.body.password || User.password,
             age: req.body.age || User.age,
+            isDeleted: req.body.isDeleted || User.isDeleted,
           })
           .then(() => res.status(200).send(User))
           .catch((error) => res.status(400).send(error));
@@ -71,9 +72,9 @@ const deleteUser = (req, res) => {
         }
         return User
         .update({
-            isDeleted: true,
+          isDeleted: true,
           })
-          .then(() => res.status(200).send(User))
+          .then(() => res.status(201).send(User))
           .catch((error) => res.status(400).send(error));
       })
       .catch((error) => res.status(400).send(error));
