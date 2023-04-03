@@ -31,10 +31,7 @@ services:
       POSTGRES_HOST: ${POSTGRES_HOST}
       POSTGRES_DIALECT: ${POSTGRES_DIALECT}
     restart: always
-    volumes:
-      - ./dbData:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
 volumes:
-  db_data:
   src:
