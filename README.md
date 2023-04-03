@@ -27,6 +27,7 @@ git clone https://github.com/slubimav/NodejsGMP.git
 cd NodejsGMP
 git checkout task-3
 npm install
+cp .env.example .env
 npm run lint
 npm run dev
 
@@ -36,7 +37,7 @@ Then use POSTMAN
 
 ```
 {
-    "login": "nome2sergey",
+    "login": "sergey",
     "password": "NewOne1",
     "age": "130",
     "isDeleted": "false"
