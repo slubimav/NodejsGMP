@@ -19,6 +19,8 @@ services:
       POSTGRES_DIALECT: ${POSTGRES_DIALECT}
     depends_on:
       - db
+    networks:
+      - default
   db:
     build:
       context: .
@@ -33,5 +35,11 @@ services:
     restart: always
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    networks:
+      - default
 volumes:
+  db_data:
   src:
+networks:
+  default: 
+    driver: bridge 

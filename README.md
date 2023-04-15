@@ -29,6 +29,7 @@ git checkout task-3
 npm install
 cp .env.example .env
 npm run lint
+cp .env.example .env
 npm run dev
 
 ```
