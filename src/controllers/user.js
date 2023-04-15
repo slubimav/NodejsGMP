@@ -1,6 +1,9 @@
 import User from '../models/user.js'
+import logger from '../helpers/logger.js';
 
 const listAllUsers = (req, res) => {
+  const reqParams = { ...req.method, ...req.params, ...req.body }
+  logger.debug('Error in Request: ' + JSON.stringify(reqParams))
     return User
       .findAll({
         order: [
@@ -8,7 +11,9 @@ const listAllUsers = (req, res) => {
         ],
       })
       .then((Users) => res.status(200).send(Users))
-      .catch((error) => { res.status(400).send(error); });
+      .catch((error) => { 
+        logger.error('ERROR: ' + 'Method: ' + req.method + 'Params: ' + req.params + 'Body: ' + req.body)
+        res.status(400).send(error); });
   }
 
 const getUserById = (req, res) => {

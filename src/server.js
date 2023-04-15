@@ -1,6 +1,7 @@
 import express from 'express'
 import router from './router.js'
 import * as dotenv from 'dotenv'
+import logger from './helpers/logger.js';
 dotenv.config()
 const PORT = process.env.SERVER_PORT || 3000
 
@@ -21,11 +22,13 @@ const startServer = () => {
 
       process.on('uncaughtException', err => {
             console.error(`❌ UncaughtException error: '${err.message}'. ${err.stack}`);
+            logger.error(`❌ UncaughtException error: '${err.message}'. ${err.stack}`);
             process.exit();
             });
               
       process.on('unhandledRejection', err => {
             console.error(`❌ UnhandledRejection error: '${err.message}'. ${err.stack}`);
+            logger.error(`❌ UnhandledRejection error: '${err.message}'. ${err.stack}`);
             process.exit();
             });
       }
