@@ -1,122 +1,244 @@
 {
 	"info": {
-		"_postman_id": "32d78e5d-ef72-46fe-b08e-8e5f99c50289",
-		"name": "Express NodeJsGMP",
+		"_postman_id": "03edd9c5-49d6-44ca-9646-eead572ce11c",
+		"name": "Express NodeJsGMP Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15516351"
 	},
 	"item": [
 		{
-			"name": "Get All Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:4000/users",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get User By ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:4000/users/ffcdb1e6-3538-431c-9713-5b74d3aef7da",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users",
-						"ffcdb1e6-3538-431c-9713-5b74d3aef7da"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"login\": \"sergey\",\n    \"password\": \"AnotherOne\",\n    \"age\": \"13\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:4000/users/",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update User by ID",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"login\": \"HaHa\",\n    \"password\": \"233sdsd\",\n    \"age\": 23,\n    \"isDeleted\": false\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/users/ffcdb1e6-3538-431c-9713-5b74d3aef7da",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"ffcdb1e6-3538-431c-9713-5b74d3aef7da"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:4000/users/a4340e04-1462-474d-bb70-594ecd78ae52",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"users",
-						"a4340e04-1462-474d-bb70-594ecd78ae52"
-					]
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"sergey\",\n    \"password\": \"AnotherOne\",\n    \"age\": \"13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"HaHa\",\n    \"password\": \"233sdsd\",\n    \"age\": 23,\n    \"isDeleted\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/a4340e04-1462-474d-bb70-594ecd78ae52",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"a4340e04-1462-474d-bb70-594ecd78ae52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"87ef73a1-d7b8-4941-bd4e-424e58a0b3d5"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Delete User by ID",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "localhost:3000/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"87ef73a1-d7b8-4941-bd4e-424e58a0b3d5"
-					]
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Get All Groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/groups",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/groups/0334bba7-3409-4c3b-ae7c-456f8ecc5825",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"groups",
+								"0334bba7-3409-4c3b-ae7c-456f8ecc5825"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admins\",\n    \"permissions\": [ \"READ\", \"WRITE\", \"DELETE\", \"SHARE\", \"UPLOAD_FILES\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/groups/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"groups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admins123\",\n    \"permissions\": [ \"READ\", \"WRITE\", \"DELETE\", \"SHARE\", \"UPLOAD_FILES\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/groups/0334bba7-3409-4c3b-ae7c-456f8ecc5825",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"groups",
+								"0334bba7-3409-4c3b-ae7c-456f8ecc5825"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/groups/0334bba7-3409-4c3b-ae7c-456f8ecc5825",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"groups",
+								"0334bba7-3409-4c3b-ae7c-456f8ecc5825"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
