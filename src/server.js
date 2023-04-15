@@ -5,11 +5,11 @@ import logger from './helpers/logger.js';
 import login from './middleware/jwtauth.js'
 dotenv.config()
 const PORT = process.env.SERVER_PORT || 3000
+const server = express()
 
 const startServer = () => {
-      const server = express()
       server.use(express.json())
-      server.use('/', login, router)
+      server.use('/', router)
       server.use(function (error, req, response, next){
             if (error.type === 'entity.parse.failed') {
                   response.status(400).send('Not valid body in request.')
@@ -38,3 +38,5 @@ const startServer = () => {
       }
     
 startServer()
+
+export default server

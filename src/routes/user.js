@@ -1,6 +1,7 @@
 import express from 'express'
 const userRouter = express()
 import userController from '../controllers/user.js'
+//import login from '../middleware/jwtauth.js'
 
 /* user Router */
 userRouter.get('/', userController.listAllUsers);
