@@ -14,7 +14,7 @@ const login = (req, res, next) => {
       console.log('middleware is working');
       next();
     } catch (error) {
-      res.status(401).json('invalid token');
+      res.status(403).json('invalid token');
     }
   }
 
