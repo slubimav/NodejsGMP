@@ -7,8 +7,6 @@ const listAllUsers = (req, res) => {
     params: req.params, 
     body: req.body }
 
-    throw new Error('Uppsss');
-
   logger.info('Request: ' + JSON.stringify(reqParams))
     return User
       .findAll({
